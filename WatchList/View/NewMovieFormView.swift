@@ -49,8 +49,9 @@ struct NewMovieFormView: View {
                 }
             // MARK: - SAVE BUTTON
                 Button {
-                    addMovie()
-                    dismiss()
+                        addMovie()
+                        dismiss()
+                    
                 }label: {
                     Text("Save")
                         .font(.title2)
@@ -60,6 +61,7 @@ struct NewMovieFormView: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.extraLarge)
                 .buttonBorderShape(.roundedRectangle)
+                .disabled(title.isEmpty || title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 
             // MARK: - CANCEL BUTTON
                 Button {
